@@ -12,11 +12,17 @@ func enqueue (queue[] string, element string ) [] string {
 }
 
 func dequeue(queue[] string) [] string{
-	firstElement := queue[0]
-	fmt.Println("Removed", firstElement)
-	queue = queue[1:]
-	fmt.Println("New queue", queue)
-	return queue
+	if len(queue) == 0 {
+		fmt.Println("Nothing to dequeue")
+		return nil
+	}else{
+		firstElement := queue[0]
+		fmt.Println("Removed", firstElement)
+		queue = queue[1:]
+		fmt.Println("New queue", queue)
+		return queue
+	}
+	
 }
 
 func main() {
